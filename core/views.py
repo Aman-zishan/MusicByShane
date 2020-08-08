@@ -1,3 +1,17 @@
 from django.shortcuts import render
+from .models import Track
 
-# Create your views here.
+
+def home(request):
+    context = {
+
+    }
+    return render(request, "home.html")
+
+
+def tracks(request):
+
+    context = {
+        "tracks": Track.objects.all()}
+
+    return render(request, "tracks.html", context)
