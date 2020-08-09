@@ -1,8 +1,11 @@
  {% extends "base.html" %}
- 
- 
+{% load static %}
+
+
+
+
  {% block content %}
- 
+
 
  <div class="bradcam_area breadcam_bg_2">
         <div class="container">
@@ -20,8 +23,8 @@
     <div class="music_area music_gallery inc_padding">
         <div class="container">
         {% for track in tracks %}
-        
-        
+
+
             <div class="row align-items-center justify-content-center mb-20">
                 <div class="col-xl-10">
                     <div class="row align-items-center">
@@ -29,8 +32,8 @@
                                     <div class="music_field">
                                             <div class="thumb">
                                                   {% comment  %}
-                                                  
-                                                   <img src="img/music_man/1.png" alt="">{% endcomment %} 
+
+                                                   <img src="img/music_man/1.png" alt="">{% endcomment %}
                                                    <img src={{track.image.url}} alt="">
                                                 </div>
                                                 <div class="audio_name">
@@ -45,7 +48,11 @@
                                     </div>
                                 </div>
                                 <div class="col-xl-3 col-md-3">
+                                  <div class="music_btn">
+                                    <a href="{{track.audio.url}}" class="boxed-btn" download>Download</a>
+                                  </div> <br>
                                     <div class="music_btn">
+
                                             <a href="#" class="boxed-btn">buy album</a>
                                     </div>
                                 </div>
@@ -55,7 +62,7 @@
             </div>
 
             {% endfor %}
-     
+
         </div>
     </div>
     <!-- music_area end  -->
@@ -71,7 +78,7 @@
                         </div>
                         <div class="hover_elements">
                             <div class="video">
-                                    <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8"> 
+                                    <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8">
                                             <i class="fa fa-play"></i>
                                         </a>
                             </div>
@@ -90,7 +97,7 @@
                         </div>
                         <div class="hover_elements">
                             <div class="video">
-                                    <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8"> 
+                                    <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8">
                                             <i class="fa fa-play"></i>
                                         </a>
                             </div>
@@ -109,7 +116,7 @@
                         </div>
                         <div class="hover_elements">
                             <div class="video">
-                                    <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8"> 
+                                    <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8">
                                             <i class="fa fa-play"></i>
                                         </a>
                             </div>
@@ -128,7 +135,7 @@
                         </div>
                         <div class="hover_elements">
                             <div class="video">
-                                    <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8"> 
+                                    <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8">
                                             <i class="fa fa-play"></i>
                                         </a>
                             </div>

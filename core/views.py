@@ -15,3 +15,10 @@ def tracks(request):
         "tracks": Track.objects.all()}
 
     return render(request, "tracks.html", context)
+'''
+def download(request, id):
+    obj = Track.objects.get(id=id)
+    filename = obj.audio.path
+    response = FileResponse(open(filename, 'rb'))
+    return response
+'''
