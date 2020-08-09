@@ -411,11 +411,30 @@ h3 {
   text-transform: capitalize;
   cursor: pointer;
 }
+.boxed-btn-1 {
+  background: transparent;
+  color: #131313;
+  display: inline-block;
+  padding: 12px 40px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  border: 0;
+  border: 1px solid #ED1B1B;
+  letter-spacing: 0;
+  text-align: center;
+  color: #ED1B1B !important;
+  text-transform: capitalize;
+  cursor: pointer;
+}
 
 @media (min-width: 768px) and (max-width: 991px) {
   /* line 1, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_btn.scss */
   .boxed-btn {
     padding: 12px 30px;
+  }
+  .boxed-btn-1 {
+    padding: 12px 28px;
   }
 }
 
@@ -425,9 +444,17 @@ h3 {
   color: #fff !important;
   border: 1px solid #ED1B1B;
 }
+.boxed-btn-1:hover {
+  background: #ED1B1B;
+  color: #fff !important;
+  border: 1px solid #ED1B1B;
+}
 
 /* line 24, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_btn.scss */
 .boxed-btn:focus {
+  outline: none;
+}
+.boxed-btn-1:focus {
   outline: none;
 }
 
