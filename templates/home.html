@@ -29,6 +29,7 @@
                                 <div class="col-xl-9 col-md-9">
                                     <div class="music_field">
                                             <div class="thumb">
+
                                                     <img src="{% static 'img/music_man/1.png' %}" alt="">
                                                 </div>
                                                 <div class="audio_name">
@@ -44,7 +45,7 @@
                                 </div>
                                 <div class="col-xl-3 col-md-3">
                                     <div class="music_btn">
-                                            <a href="#" class="boxed-btn">buy albam</a>
+                                            <a href="#" class="boxed-btn">buy album</a>
                                     </div>
                                 </div>
                     </div>
@@ -89,7 +90,7 @@
                         </div>
                         <div class="hover_elements">
                             <div class="video">
-                                    <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8"> 
+                                    <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8">
                                             <i class="fa fa-play"></i>
                                         </a>
                             </div>
@@ -108,7 +109,7 @@
                         </div>
                         <div class="hover_elements">
                             <div class="video">
-                                    <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8"> 
+                                    <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8">
                                             <i class="fa fa-play"></i>
                                         </a>
                             </div>
@@ -127,7 +128,7 @@
                         </div>
                         <div class="hover_elements">
                             <div class="video">
-                                    <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8"> 
+                                    <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8">
                                             <i class="fa fa-play"></i>
                                         </a>
                             </div>
@@ -146,7 +147,7 @@
                         </div>
                         <div class="hover_elements">
                             <div class="video">
-                                    <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8"> 
+                                    <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8">
                                             <i class="fa fa-play"></i>
                                         </a>
                             </div>
@@ -173,13 +174,15 @@
                             </div>
                         </div>
                     </div>
+
+                    {% for track in tracks %}
             <div class="row align-items-center justify-content-center mb-20">
                 <div class="col-xl-10">
                     <div class="row align-items-center">
                                 <div class="col-xl-9 col-md-9">
                                     <div class="music_field">
                                             <div class="thumb">
-                                                    <img src="{% static 'img/music_man/1.png' %}" alt="">
+                                                    <img src="{{track.image.url}}" alt="">
                                                 </div>
                                                 <div class="audio_name">
                                                     <div class="name">
@@ -201,62 +204,8 @@
                 </div>
 
             </div>
-            <div class="row align-items-center justify-content-center mb-20">
-                <div class="col-xl-10">
-                    <div class="row align-items-center">
-                                <div class="col-xl-9 col-md-9">
-                                    <div class="music_field">
-                                            <div class="thumb">
-                                                    <img src="img/music_man/2.png" alt="">
-                                                </div>
-                                                <div class="audio_name">
-                                                    <div class="name">
-                                                        <h4>Frando Kally</h4>
-                                                        <p>10 November, 2019</p>
-                                                    </div>
-                                                        <audio preload="auto" controls>
-                                                                <source src="https://www.w3schools.com/html/horse.mp3">
-                                                            </audio>
-                                                </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-md-3">
-                                    <div class="music_btn">
-                                            <a href="#" class="boxed-btn">buy albam</a>
-                                    </div>
-                                </div>
-                    </div>
-                </div>
+            {% endfor %}
 
-            </div>
-            <div class="row align-items-center justify-content-center mb-20">
-                <div class="col-xl-10">
-                    <div class="row align-items-center">
-                                <div class="col-xl-9 col-md-9">
-                                    <div class="music_field">
-                                            <div class="thumb">
-                                                    <img src="img/music_man/3.png" alt="">
-                                                </div>
-                                                <div class="audio_name">
-                                                    <div class="name">
-                                                        <h4>Frando Kally</h4>
-                                                        <p>10 November, 2019</p>
-                                                    </div>
-                                                        <audio preload="auto" controls>
-                                                                <source src="https://www.w3schools.com/html/horse.mp3">
-                                                            </audio>
-                                                </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-md-3">
-                                    <div class="music_btn">
-                                            <a href="#" class="boxed-btn">buy albam</a>
-                                    </div>
-                                </div>
-                    </div>
-                </div>
-
-            </div>
         </div>
     </div>
     <!-- music_area end  -->

@@ -3,10 +3,13 @@ from .models import Track
 
 
 def home(request):
-    context = {
 
-    }
-    return render(request, "home.html")
+    context = {
+        "tracks": Track.objects.all()[:2],
+
+        }
+
+    return render(request, "home.html", context)
 
 
 def tracks(request):
