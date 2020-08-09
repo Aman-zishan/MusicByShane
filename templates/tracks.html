@@ -22,7 +22,7 @@
     <!-- music_area  -->
     <div class="music_area music_gallery inc_padding">
         <div class="container">
-        {% for track in tracks %}
+        {% for track in tracks reversed %}
 
 
             <div class="row align-items-center justify-content-center mb-20">
@@ -38,6 +38,8 @@
                                                 </div>
                                                 <div class="audio_name">
                                                     <div class="name">
+
+
                                                         <h4>{{track.title}}</h4>
                                                         <p>{{track.date}}</p>
                                                     </div>
@@ -60,6 +62,8 @@
                 </div>
 
             </div>
+            {% empty %}
+            <h4 align="center">No tracks available right now</h4>
 
             {% endfor %}
 

@@ -34,11 +34,11 @@
                                                 </div>
                                                 <div class="audio_name">
                                                     <div class="name">
-                                                        <h4>Frando Kally</h4>
+                                                        <h4>{{track_home.title}}</h4>
                                                         <p>10 November, 2019</p>
                                                     </div>
                                                         <audio preload="auto" controls>
-                                                                <source src="https://www.w3schools.com/html/horse.mp3">
+                                                                <source src="{{track_home.audio.url}}">
                                                             </audio>
                                                 </div>
                                     </div>
@@ -175,7 +175,7 @@
                         </div>
                     </div>
 
-                    {% for track in tracks %}
+                    {% for track in tracks reversed %}
             <div class="row align-items-center justify-content-center mb-20">
                 <div class="col-xl-10">
                     <div class="row align-items-center">
@@ -186,11 +186,11 @@
                                                 </div>
                                                 <div class="audio_name">
                                                     <div class="name">
-                                                        <h4>Frando Kally</h4>
+                                                        <h4>{{track.title}}</h4>
                                                         <p>10 November, 2019</p>
                                                     </div>
                                                         <audio preload="auto" controls>
-                                                                <source src="https://www.w3schools.com/html/horse.mp3">
+                                                                <source src="{{track.audio.url}}">
                                                             </audio>
                                                 </div>
                                     </div>
@@ -204,6 +204,8 @@
                 </div>
 
             </div>
+            {% empty %}
+            <h4 align="center">No tracks available right  now</h4>
             {% endfor %}
 
         </div>

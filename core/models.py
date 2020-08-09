@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Track(models.Model):
-    id = models.PositiveIntegerField(primary_key=True)
+    
     title = models.CharField(max_length=100)
     date = models.DateField(default="--/--/--")
     '''

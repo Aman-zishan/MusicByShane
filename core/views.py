@@ -5,7 +5,8 @@ from .models import Track
 def home(request):
 
     context = {
-        "tracks": Track.objects.all()[:2],
+        "tracks": Track.objects.all()[2:],
+        "track_home": Track.objects.all().reverse()[0],
 
         }
 
