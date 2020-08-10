@@ -6,166 +6,125 @@
 
  {% block content %}
 
-
- <div class="bradcam_area breadcam_bg_2">
+{% include "navbar.html" %}
+ <section class="about">
         <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="bradcam_text text-center">
-                        <h3>My Tracks</h3>
+          <div class="col-md-6 col-sm-6">
+            <div class="personnel wow animated fadeIn" data-wow-delay="0.2s">
+              <div class="title">
+                <h3>
+                  Lorem epsum <br/>
+                  <span class="bold orange">epsum</span>
+                </h3>
+              </div>
+              <div class="personnel-list">
+                {% for track in tracks reversed %}
+                <div class="shape photo item" style="background: url({{track.image.url}});">
+                  <a  class="overlay">
+                    <div class="name">
+                      {{track.title}}
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--/ bradcam_area  -->
-    <!-- music_area  -->
-    <div class="music_area music_gallery inc_padding">
+                  </a>
+                </div><!-- /.photo -->
+                {% endfor %}
+
+              </div><!-- /.personnel-list -->
+              <div class="text">
+                <p>Cras viverra consequat massa eu pulvinar. Suspendisse porta sem ac erat euismod mollis. Donec sit amet sapien id lacus accumsan gravida. Phasellus in sagittis erat, a dictum diam. Donec in dui odio. Vivamus non facilisis nulla. In turpis dolor, dapibus ut lacus.</p>
+                <p>Nunc porta augue ut dolor faucibus tempus. Fusce non eros quis enim pulvinar cursus vitae eget quam. Nam posuere pharetra venenatis.</p>
+              </div>
+            </div><!-- /.personnel -->
+          </div><!-- /.col-md-6 -->
+
+          <div class="col-md-6 col-sm-6">
+            <div class="discography wow animated fadeIn" data-wow-delay="0.4s">
+              <div class="title">
+                <h3>
+                  Discography <br/>
+                  <span class="bold orange">Of My Music</span>
+                </h3>
+              </div>
+              <div class="content">
+                <!-- Jplayer Playlist Layout Begin -->
+                <div id="jquery_jplayer_2" class="jp-jplayer"></div>
+                <div id="jp_container_2" class="jp-audio" role="application" aria-label="media player">
+                  <div class="jp-type-playlist">
+                    <div class="jp-gui jp-interface">
+                      <div class="jp-volume-controls">
+                        <button class="jp-mute" role="button" tabindex="0">mute</button>
+                        <button class="jp-volume-max" role="button" tabindex="0">max volume</button>
+                        <div class="jp-volume-bar">
+                          <div class="jp-volume-bar-value"></div>
+                        </div>
+                      </div>
+                      <div class="jp-controls-holder">
+                        <div class="jp-controls">
+                          <button class="jp-previous" role="button" tabindex="0">previous</button>
+                          <button class="jp-play" role="button" tabindex="0">play</button>
+                          <button class="jp-stop" role="button" tabindex="0">stop</button>
+                          <button class="jp-next" role="button" tabindex="0">next</button>
+                        </div>
+                        <div class="jp-progress">
+                          <div class="jp-seek-bar">
+                            <div class="jp-play-bar"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="jp-playlist">
+                      <ul>
+                        <li>&nbsp;</li>
+                      </ul>
+                    </div>
+                    <div class="jp-no-solution">
+                      <span>Update Required</span>
+                      To play the media you will need to either update your browser to a recent version or update your <a href="https://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+                    </div>
+                  </div><!-- /.jp-type-playlist -->
+                </div><!-- /.jp-audio -->
+                <!-- Jplayer Playlist Layout End -->
+              </div><!-- /.content -->
+            </div><!-- /.discography -->
+          </div><!-- /.col-md-6 -->
+
+        </div><!-- /.container -->
+      </section><!-- /.schedule -->
+      <!-- About End -->
+
+      <section class="latest-album">
         <div class="container">
-        {% for track in tracks reversed %}
-
-
-            <div class="row align-items-center justify-content-center mb-20">
-                <div class="col-xl-10">
-                    <div class="row align-items-center">
-                                <div class="col-xl-9 col-md-9">
-                                    <div class="music_field">
-                                            <div class="thumb">
-                                                  {% comment  %}
-
-                                                   <img src="img/music_man/1.png" alt="">{% endcomment %}
-                                                   <img src={{track.image.url}} alt="">
-                                                </div>
-                                                <div class="audio_name">
-                                                    <div class="name">
-
-
-                                                        <h4>{{track.title}}</h4>
-                                                        <p>{{track.date}}</p>
-                                                    </div>
-                                                        <audio preload="auto" controls>
-                                                                <source src="{{track.audio.url}}">
-                                                            </audio>
-                                                </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-md-3">
-
-                                    <div class="music_btn">
-
-                                            <a href="#" class="boxed-btn">buy Song</a>
-                                            <a href="{{track.audio.url}}" class="boxed-btn" download> Download </a>
-                                    </div>
-                                </div>
-                    </div>
-                </div>
-
+          <div class="col-md-3 col-sm-3 intro-wrap">
+            <div class="intro wow animated fadeIn" data-wow-delay="0.3s">
+              <h3>Downloads</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae lectus ac erat dapibus lobortis. Sed fermentum, ante quis mollis fringilla, augue sapien volutpat dolor, sit amet condimentum orci risus id purus.</p>
+              <a href="album-3columns-filter.html"><div class="def-button">Support Me</div></a>
             </div>
-            {% empty %}
-            <h4 align="center">No tracks available right now</h4>
+          </div>
+          {% for track in tracks reversed %}
+          <div class="col-md-3 col-sm-3 album-card-wrap wow animated fadeIn" data-wow-delay="0.2s">
+            <div class="album-card">
+              <div class="image hoverdir-target">
+                <img src="{{track.image.url}}" alt="image">
+                <div class="overlay">
+                  <div class="buy-wrapper">
+                    <div class="buy">
 
-            {% endfor %}
-
-        </div>
-    </div>
-    <!-- music_area end  -->
-
-    <!-- youtube_video_area  -->
-    <div class="youtube_video_area">
-        <div class="container-fluid p-0">
-            <div class="row no-gutters">
-                <div class="col-xl-3 col-lg-3 col-md-6">
-                    <div class="single_video">
-                        <div class="thumb">
-                            <img src="img/video/1.png" alt="">
-                        </div>
-                        <div class="hover_elements">
-                            <div class="video">
-                                    <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8">
-                                            <i class="fa fa-play"></i>
-                                        </a>
-                            </div>
-
-                            <div class="hover_inner">
-                                <span>New York Show-2018</span>
-                                <h3><a href="#">Shadows of My Dream</a></h3>
-                            </div>
-                        </div>
                     </div>
+                  </div>
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-6">
-                    <div class="single_video">
-                        <div class="thumb">
-                            <img src="img/video/2.png" alt="">
-                        </div>
-                        <div class="hover_elements">
-                            <div class="video">
-                                    <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8">
-                                            <i class="fa fa-play"></i>
-                                        </a>
-                            </div>
+              </div>
+              <div class="text">
+                <a href="album-single.html"><div class="title"><h4>{{track.title}}</h4></div></a>
+                <div class="genre"><span>{{track.description}}</span></div>
+                <a href="{{track.audio.url}}" download> <div class="tracks"><span><i class="fa fa-download"></i> </span></div> </a>
+              </div>
+            </div><!-- /.album-card -->
+          </div><!-- /.col-md-3 -->
+          {% endfor %}
 
-                            <div class="hover_inner">
-                                <span>New York Show-2018</span>
-                                <h3><a href="#">Shadows of My Dream</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6">
-                    <div class="single_video">
-                        <div class="thumb">
-                            <img src="img/video/3.png" alt="">
-                        </div>
-                        <div class="hover_elements">
-                            <div class="video">
-                                    <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8">
-                                            <i class="fa fa-play"></i>
-                                        </a>
-                            </div>
 
-                            <div class="hover_inner">
-                                <span>New York Show-2018</span>
-                                <h3><a href="#">Shadows of My Dream</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6">
-                    <div class="single_video">
-                        <div class="thumb">
-                            <img src="img/video/4.png" alt="">
-                        </div>
-                        <div class="hover_elements">
-                            <div class="video">
-                                    <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8">
-                                            <i class="fa fa-play"></i>
-                                        </a>
-                            </div>
+        </div><!-- /.container -->
 
-                            <div class="hover_inner">
-                                <span>New York Show-2018</span>
-                                <h3><a href="#">Shadows of My Dream</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- / youtube_video_area  -->
+      </section><!-- /.latest-album -->
 
-    <!-- contact_rsvp -->
-    <div class="contact_rsvp">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="text text-center">
-                        <h3></h3>
-                        <a class="boxed-btn3" href="contact.html">Contact Me</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
      {% endblock content %}

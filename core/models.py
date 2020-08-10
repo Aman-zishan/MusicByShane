@@ -2,14 +2,10 @@ from django.db import models
 
 
 class Track(models.Model):
-    
+
     title = models.CharField(max_length=100)
+    description = models.TextField(default="song")
     date = models.DateField(default="--/--/--")
-    '''
-
-    description = models.TextField()
-    '''
-
     image = models.ImageField(default="image")
     audio = models.FileField(default="audio")
 

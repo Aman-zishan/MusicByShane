@@ -1,46 +1,31 @@
 {% load static %}
 
-<header>
-        <div class="header-area ">
-            <div id="sticky-header" class="main-header-area">
-                <div class="container-fluid">
-                    <div class="header_bottom_border">
-                        <div class="row align-items-center">
-                            <div class="col-xl-3 col-lg-2">
-                                <div class="logo">
-                                    <a href="index.html">
-                                        <img src="{% static 'img/logo.png' %}" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-7">
-                                <div class="main-menu  d-none d-lg-block">
-                                    <nav>
-                                        <ul id="navigation">
-                                            <li><a class="active" href="/">home</a></li>
-                                            <li><a href="about">About</a></li>
-                                            <li><a href="tracks">tracks</a></li>
-                                          
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-3 d-none d-lg-block">
-                                <div class="social_icon text-right">
-                                    <ul>
-                                        <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
-                                        <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
-                                        <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="mobile_menu d-block d-lg-none"></div>
-                            </div>
-                        </div>
-                    </div>
 
-                </div>
-            </div>
-        </div>
-    </header>
+<nav class="navbar fixonscroll solidnavbar navbar-inverse" role="navigation" id="home-nav">
+    <div class="container">
+      <div class="navbar-header" style="
+    padding-bottom: 10px;">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="{% static 'assets/images/logo.png' %}" alt=" Logo"></a>
+      </div><!-- /.navbar-header -->
+
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/">Home</a></li>
+
+
+          <li>
+            <a href="#" class="brand"><img src="{% static 'assets/images/logo.png' %}" alt=" Logo"></a>
+          </li>
+
+        <li> <a href="tracks">Tracks</a> </li>
+
+        </ul><!-- /.nav -->
+      </div><!--/.nav-collapse -->
+    </div><!--/.container -->
+  </nav><!--/.navbar -->

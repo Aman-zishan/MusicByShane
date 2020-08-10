@@ -19,8 +19,3 @@ def tracks(request):
         "tracks": Track.objects.all()}
 
     return render(request, "tracks.html", context)
-
-
-
-def about(request):
-     return render(request, "about.html")
