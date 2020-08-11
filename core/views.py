@@ -1,13 +1,17 @@
 from django.shortcuts import render
-from .models import Track, Event
+from .models import Track, Event, Gallery_image
 
 
 def home(request):
 
+    length = len(Track.objects.all())
+    n = abs(length-4)
+
     context = {
-        "tracks": Track.objects.all()[2:],
+        "tracks": Track.objects.all()[n:],
         "track_home": Track.objects.all().last(),
         "events": Event.objects.all(),
+        "gallery_images": Gallery_image.objects.all(),
 
         }
 
@@ -22,6 +26,8 @@ def tracks(request):
         }
 
     return render(request, "tracks.html", context)
+
+
 
 #error handler
 

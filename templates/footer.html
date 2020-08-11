@@ -28,11 +28,12 @@
           <ul class="upcoming-event">
             {% for event in events reversed %}
             <li>
-              {% empty %}
-              <p>no recent events</p>
+
               <div class="col-md-1 col-sm-1 col-xs-1 date"><span class="number"></span><br/></div>
-              <div class="col-md-10 col-sm-10 col-xs-10 name">{{event.title}} <br/> </div>
+              <div class="col-md-10 col-sm-10 col-xs-10 name">{{event.title}} </div>
             </li>
+            {% empty %}
+            <p align="center" >No events at the moment</p>
             {% endfor %}
 
 
@@ -72,7 +73,7 @@
 
 
     </div><!-- /.container -->
-    <div style="padding-top:30px;padding-left:9%;">
+    <div align="center">
       <p >All rights reserved | Made with ❤️ by <a href="https://amanzishan.me/"><span style="color:tomato;">AmanZishan</span> </a></p>
     </div>
   </footer><!-- /.footer -->

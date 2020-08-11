@@ -19,7 +19,7 @@
 
                 </div>
                 <div class="title animated fadeIn wow" data-wow-delay="1s">
-                  <h1><span class="light"></span><img src="{% static 'assets/images/logo.png' %} "></h1>
+                  <h1><span class="light"></span><img src="{% static 'assets/images/logo1.png' %} " width="50%"></h1>
                 </div>
                 <div class="subtitle animated fadeIn wow" data-wow-delay="1.5s">
                   <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis maximus lacus, in placerat ex. Curabitur tristique eu sapien accumsan sodales.</h2>
@@ -41,7 +41,7 @@
 
                 </div>
                 <div class="title animated fadeIn wow" data-wow-delay="1s">
-                  <h1><span class="light"></span><img src="{% static 'assets/images/logo.png' %} "></h1>
+                  <h1><span class="light"></span><img src="{% static 'assets/images/logo1.png' %} " width="50%"></h1>
                 </div>
                 <div class="subtitle animated fadeIn wow" data-wow-delay="1.5s">
                   <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis maximus lacus, in placerat ex. Curabitur tristique eu sapien accumsan sodales.</h2>
@@ -189,10 +189,12 @@
       </div><!-- /.col-md-6 -->
 
     </div><!-- /.container -->
-    <div align="right" class="col-md-3 col-sm-3 intro-wrap">
+    <div align="center" class="col-md-3 col-sm-3 intro-wrap">
       <div class="intro wow animated fadeIn" data-wow-delay="0.3s">
 
-        <a href="tracks"><div class="def-button">View All</div></a>
+        <a href="tracks"><div class="def-button" style="
+    margin-top: 15px;
+">View All Tracks</div></a>
       </div>
     </div>
   </section><!-- /.schedule -->
@@ -200,11 +202,16 @@
   <section class="schedule">
       <div class="overlay"></div>
       <div class="container content">
-        <div class="col-md-12 title wow animated fadeIn animated" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;"><h2>Events</h2></div>
+        <div class="col-md-12 title wow animated fadeIn animated" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;"><h2 >Events</h2></div>
         <div class="col-md-12">
           {% for event in events reversed %}
+
+
+
+
           <div class="schedrow wow animated fadeIn animated" style="visibility: visible; animation-name: fadeIn;">
             <div class="event">
+
               <span class="bold"><i class="fa fa-microphone"></i>{{event.title}}</span>
             </div>
             <div class="location">
@@ -215,6 +222,8 @@
             </div>
 
           </div><!-- /.schedrow -->
+          {% empty %}
+          <p align="center" style="font-size:24px;" class="bold orange">No events at the moment</p>
 
           {% endfor %}
 
@@ -227,15 +236,12 @@
 
     <div align="center" class="container content">
       <div class="title wow animated fadeInDown"><h2>Latest Photos</h2></div>
-      <div class="fotorama"  style="padding-left:50px;padding-right:50px; ">
-  <img src="{% static 'assets/images/gallery1.jpg' %}">
-  <img src="{% static 'assets/images/gallery2.jpg' %}">
-  <img src="{% static 'assets/images/gallery3.jpg' %}">
-  <img src="{% static 'assets/images/gallery4.jpg' %}">
-  <img src="{% static 'assets/images/gallery5.jpg' %}">
-  <img src="{% static 'assets/images/gallery6.jpg' %}">
-  <img src="{% static 'assets/images/gallery1.jpg' %}">
-  <img src="{% static 'assets/images/gallery2.jpg' %}">
+      <div class="fotorama"  >
+        {% for gallery_image in gallery_images %}
+          <img src="{{gallery_image.image.url}}" alt="{{gallery_image.title}}">
+        {% empty %}
+        <p class="bold orange" style="padding-top:10px;font-size:20px;">no recent photos</p>
+        {% endfor %}
 
 </div>
     </div>
