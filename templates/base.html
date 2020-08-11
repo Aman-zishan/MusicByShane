@@ -51,14 +51,15 @@
   </head>
 
 <body>
-  <div id="jSplash" class="preloader">
-    <div id="loader">
+  <div id="jSplash" class="preloader" align="center" >
+    <img  src="{% static 'assets/images/logo.png' %}" alt="">
+    <div id="loader"  >
 
-        <div class="shape">
-          <h2 align="center"><img src="{% static 'assets/images/logo.png' %}" alt=""></h2>
 
-      </div>
-      <div id="fadingBarsG">
+
+
+<div id="fadingBarsG">
+
         <div id="fadingBarsG_1" class="fadingBarsG">
         </div>
         <div id="fadingBarsG_2" class="fadingBarsG">
@@ -84,6 +85,6 @@
     {% block content  %}
     {% endblock content %}
 </body>
-    {% include "footer.html" %}
+  
     {% include "scripts.html" %}
 </html>

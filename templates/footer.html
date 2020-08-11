@@ -25,22 +25,17 @@
         <div class="title"><h4>Events</h4></div>
         <div class="content">
           <ul class="upcoming-event">
+            {% for event in events reversed %}
             <li>
-              <div class="col-md-1 col-sm-1 col-xs-1 date"><span class="number">20</span><br/>Oct</div>
-              <div class="col-md-10 col-sm-10 col-xs-10 name">New Sound Wave - Camp Nou Stadium <br/> </div>
+              {% empty %}
+              <p>no recent events</p>
+              <div class="col-md-1 col-sm-1 col-xs-1 date"><span class="number"></span><br/></div>
+              <div class="col-md-10 col-sm-10 col-xs-10 name">{{event.title}} <br/> </div>
             </li>
-            <li>
-              <div class="col-md-1 col-sm-1 col-xs-1 date"><span class="number">21</span><br/>Sep</div>
-              <div class="col-md-10 col-sm-10 col-xs-10 name">Glory Sound - Brigif Kujang 15 <br/> </div>
-            </li>
-            <li>
-              <div class="col-md-1 col-sm-1 col-xs-1 date"><span class="number">10</span><br/>Nov</div>
-              <div class="col-md-10 col-sm-10 col-xs-10 name">Bandung Berisik - Lanud Sulaeman <br/> </div>
-            </li>
-            <li>
-              <div class="col-md-1 col-sm-1 col-xs-1 date"><span class="number">17</span><br/>Dec</div>
-              <div class="col-md-10 col-sm-10 col-xs-10 name">Hammersonic - Gasibu Stadium<br/></div>
-            </li>
+            {% endfor %}
+
+
+
           </ul><!-- /.upcoming-event -->
         </div><!-- /.content -->
       </div><!-- /.footer-row -->

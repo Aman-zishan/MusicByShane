@@ -115,7 +115,7 @@
               </div>
               <div class="text">
                 <a href="album-single.html"><div class="title"><h4>{{track.title}}</h4></div></a>
-                <div class="genre"><span>{{track.description}}</span></div>
+                <div class="genre"><span>{{track.date}}</span></div>
                 <a href="{{track.audio.url}}" download> <div class="tracks"><span><i class="fa fa-download"></i> </span></div> </a>
               </div>
             </div><!-- /.album-card -->
@@ -126,5 +126,5 @@
         </div><!-- /.container -->
 
       </section><!-- /.latest-album -->
-
+{% include "footer.html" %}
      {% endblock content %}
