@@ -1,5 +1,5 @@
 from django.urls import path, re_path
-from .views import home, tracks
+from .views import home, tracks, handler404, handler500
 
 app_name = "core"
 
@@ -13,3 +13,5 @@ urlpatterns = [
 
 
 ]
+handler404 = handler404
+handler500 = handler500

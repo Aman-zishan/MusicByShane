@@ -13,8 +13,10 @@ class Track(models.Model):
         return self.title
 
 class Event(models.Model):
-    title = models.TextField(default="program title")
-    prg_date = models.DateField(default="--/--/--")
+    title = models.CharField(default="program title",max_length=100)
+    program_date = models.DateField(default="--/--/--")
+    program_location = models.CharField(default="city/place",max_length=100)
+    description = models.CharField(default="program description",max_length=200)
 
 
     def __str__(self):

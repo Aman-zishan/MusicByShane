@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+
 {% load static %}
 
 
@@ -196,98 +197,54 @@
     </div>
   </section><!-- /.schedule -->
   <!-- About End -->
+  <section class="schedule">
+      <div class="overlay"></div>
+      <div class="container content">
+        <div class="col-md-12 title wow animated fadeIn animated" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;"><h2>Events</h2></div>
+        <div class="col-md-12">
+          {% for event in events reversed %}
+          <div class="schedrow wow animated fadeIn animated" style="visibility: visible; animation-name: fadeIn;">
+            <div class="event">
+              <span class="bold"><i class="fa fa-microphone"></i>{{event.title}}</span>
+            </div>
+            <div class="location">
+              <span class="bold"><i class="fa fa-map-marker"></i>{{event.program_location}} </span> / {{event.program_date}}
+            </div>
+            <div class="ticket">
+            <span class="bold">{{event.description}}</span>
+            </div>
+
+          </div><!-- /.schedrow -->
+
+          {% endfor %}
+
+        </div><!-- /.col-md-12 -->
+      </div><!-- /.container -->
+    </section>
 
   <!-- Gallery Begin-->
   <section class="gallery">
-    <div class="overlay"></div>
-    <div class="container content">
+
+    <div align="center" class="container content">
       <div class="title wow animated fadeInDown"><h2>Latest Photos</h2></div>
-      <div class="diamond-grid">
+      <div class="fotorama"  style="padding-left:50px;padding-right:50px; ">
+  <img src="{% static 'assets/images/gallery1.jpg' %}">
+  <img src="{% static 'assets/images/gallery2.jpg' %}">
+  <img src="{% static 'assets/images/gallery3.jpg' %}">
+  <img src="{% static 'assets/images/gallery4.jpg' %}">
+  <img src="{% static 'assets/images/gallery5.jpg' %}">
+  <img src="{% static 'assets/images/gallery6.jpg' %}">
+  <img src="{% static 'assets/images/gallery1.jpg' %}">
+  <img src="{% static 'assets/images/gallery2.jpg' %}">
 
-        <div class="diamond-wrap wow animated fadeIn" data-wow-delay="0.2s">
-          <div class="shape photo" style="background: url({% static 'assets/images/front-gallery1.jpg' %});">
-            <a class="fancybox" href="assets/images/front-gallery1.jpg" data-fancybox-group="front-gallery">
-              <div class="overlay-black"></div>
-              <div class="overlay">
-                <div class="text"><span>View Photo</span></div>
-              </div>
-            </a>
-          </div>
-        </div><!-- /.diamond-wrap -->
-
-        <div class="diamond-wrap wow animated fadeIn" data-wow-delay="0.4s">
-          <div class="shape photo" style="background: url({% static 'assets/images/front-gallery2.jpg' %});">
-            <a class="fancybox" href="assets/images/front-gallery2.jpg" data-fancybox-group="front-gallery">
-              <div class="overlay-black"></div>
-              <div class="overlay">
-                <div class="text"><span>View Photo</span></div>
-              </div>
-            </a>
-          </div>
-        </div><!-- /.diamond-wrap -->
-
-        <div class="diamond-wrap wow animated fadeIn" data-wow-delay="0.6s">
-          <div class="shape photo" style="background: url({% static 'assets/images/front-gallery3.jpg' %});">
-            <a class="fancybox" href="assets/images/front-gallery3.jpg" data-fancybox-group="front-gallery">
-              <div class="overlay-black"></div>
-              <div class="overlay">
-                <div class="text"><span>View Photo</span></div>
-              </div>
-            </a>
-          </div>
-        </div><!-- /.diamond-wrap -->
-
-        <div class="diamond-wrap wow animated fadeIn" data-wow-delay="0.7s">
-          <div class="shape photo" style="background: url({% static 'assets/images/front-gallery4.jpg' %});">
-            <a class="fancybox" href="assets/images/front-gallery4.jpg" data-fancybox-group="front-gallery">
-              <div class="overlay-black"></div>
-              <div class="overlay">
-                <div class="text"><span>View Photo</span></div>
-              </div>
-            </a>
-          </div>
-        </div><!-- /.diamond-wrap -->
-
-        <div class="diamond-wrap wow animated fadeIn" data-wow-delay="0.8s">
-          <div class="shape photo" style="background: url({% static 'assets/images/front-gallery5.jpg' %});">
-            <a class="fancybox" href="assets/images/front-gallery5.jpg" data-fancybox-group="front-gallery">
-              <div class="overlay-black"></div>
-              <div class="overlay">
-                <div class="text"><span>View Photo</span></div>
-              </div>
-            </a>
-          </div>
-        </div><!-- /.diamond-wrap -->
-
-        <div class="diamond-wrap wow animated fadeIn" data-wow-delay="0.9s">
-          <div class="shape photo" style="background: url({% static 'assets/images/front-gallery6.jpg' %});">
-            <a class="fancybox" href="assets/images/front-gallery6.jpg" data-fancybox-group="front-gallery">
-              <div class="overlay-black"></div>
-              <div class="overlay">
-                <div class="text"><span>View Photo</span></div>
-              </div>
-            </a>
-          </div>
-        </div><!-- /.diamond-wrap -->
-
-        <div class="diamond-wrap wow animated fadeIn" data-wow-delay="1s">
-          <div class="shape photo" style="background: url({% static 'assets/images/front-gallery7.jpg' %});">
-            <a class="fancybox" href="assets/images/front-gallery7.jpg" data-fancybox-group="front-gallery">
-              <div class="overlay-black"></div>
-              <div class="overlay">
-                <div class="text"><span>View Photo</span></div>
-              </div>
-            </a>
-          </div>
-        </div><!-- /.diamond-wrap -->
-
-      </div><!-- /.diamond-grid -->
+</div>
+    </div>
 
       <div class="bottom-text">
 
       </div>
 
-    </div><!-- /.container -->
+    <!-- /.container -->
   </section><!-- /.gallery -->
   <!-- Gallery End-->
 
@@ -295,5 +252,5 @@
 
   <!-- News End-->
 
-  {% include "footer.html" %}
+
 {% endblock content %}
